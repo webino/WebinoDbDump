@@ -16,8 +16,6 @@ use Zend\Di\Definition\CompilerDefinition;
 
 // Autoloader
 $vendorDir = __DIR__ . '/../vendor';
-// todo
-$vendorDir = '/var/www/dev2/doplnky4u.sk-src/vendor';
 $loader    = require $vendorDir . '/autoload.php';
 
 $loader->add(__NAMESPACE__, __DIR__ . '/../src');
