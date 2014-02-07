@@ -4,7 +4,8 @@
  *
  * @link        https://github.com/webino/WebinoDbDump for the canonical source repository
  * @copyright   Copyright (c) 2014 Webino, s. r. o. (http://webino.sk)
- * @license     New BSD License
+ * @author      Peter Bačinský <peter@bacinsky.sk>
+ * @license     The BSD 3-Clause License
  */
 
 include __DIR__ . '/src/WebinoDbDump/Module.php';
