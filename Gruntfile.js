@@ -91,11 +91,11 @@ module.exports = function(grunt) {
                 cmd: "ln -s <%= basedir %>/test/resources/config/application.config.php <%= basedir %>/._test/ZendSkeletonApplication/config/application.config.php"
             }
         },
-        phplint: [
-            "src/**/*.php",
-            "test/**/*.php",
-            "config/**/*.php"
-        ],
+        phplint: {
+            src: ["src/**/*.php"],
+            test: ["test/**/*.php"],
+            config: ["config/**/*.php"]
+        },
         phpunit: {
             options: {
                 configuration: "test",
@@ -117,7 +117,7 @@ module.exports = function(grunt) {
                 reportFile: "._log/checkstyle.html",
                 verbose: true
             },
-            package: {dir: "src test"}
+            package: {dir: ["src", "test"]}
         },
         phpmd: {
             options: {
