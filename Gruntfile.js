@@ -127,7 +127,7 @@ module.exports = function(grunt) {
                 rulesets: "codesize,design,naming,unusedcode",
                 reportFile: "._log/phpmd.xml"
             },
-            package: {dir: "src/<%= pkg.name %>"}
+            package: {dir: "src"}
         },
         phpcpd: {
             options: {
