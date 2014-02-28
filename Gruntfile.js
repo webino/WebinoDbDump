@@ -223,6 +223,7 @@ module.exports = function(grunt) {
         "Analyze the code",
         [
             "phpmd",
+            "phpcpd",
             "exec:phploc",
             "exec:pdepend",
             "exec:phpcb",
