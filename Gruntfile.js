@@ -29,9 +29,6 @@ module.exports = function(grunt) {
             }
         },
         exec: {
-            classmap: {
-                cmd: "php vendor/bin/classmap_generator.php -l src/<%= pkg.name %>"
-            },
             didef: {
                 cmd: "php bin/definition_generator.php"
             },
@@ -58,9 +55,6 @@ module.exports = function(grunt) {
             },
             link_precommit: {
                 cmd: "ln -s <%= basedir %>/pre-commit <%= basedir %>/.git/hooks/pre-commit && chmod +x <%= basedir %>/pre-commit"
-            },
-            add_classmap: {
-                cmd: "git add src/<%= pkg.name %>/autoload_classmap.php"
             },
             add_didef: {
                 cmd: "git add data/di"
@@ -254,10 +248,8 @@ module.exports = function(grunt) {
         "precommit",
         "Git pre-commit",
         [
-            "exec:classmap",
             "test",
             "exec:didef",
-            "exec:add_classmap",
             "exec:add_didef"
         ]
     );
