@@ -187,7 +187,7 @@ abstract class AbstractTable
     }
 
     /**
-     * @return TavleColumnsInterface
+     * @return TableColumnsInterface
      */
     private function createColumnsInternal()
     {
