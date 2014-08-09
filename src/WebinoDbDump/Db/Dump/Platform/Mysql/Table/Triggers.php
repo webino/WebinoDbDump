@@ -10,7 +10,7 @@
 namespace WebinoDbDump\Db\Dump\Platform\Mysql\Table;
 
 use SplFileObject as File;
-use WebinoDbDump\Db\Dump\Table\AbstractTriggers;
+use WebinoDbDump\Db\Dump\Table\AbstractExtra;
 use Zend\Db\ResultSet\ResultSet;
 
 /**
@@ -18,7 +18,7 @@ use Zend\Db\ResultSet\ResultSet;
  *
  * @author Peter Bačinský <peter@bacinsky.sk>
  */
-class Triggers extends AbstractTriggers
+class Triggers extends AbstractExtra
 {
     /**
      *

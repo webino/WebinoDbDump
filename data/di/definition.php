@@ -4,23 +4,9 @@ return array (
   array (
     'supertypes' => 
     array (
-      0 => 'Zend\\ModuleManager\\Feature\\AutoloaderProviderInterface',
-      1 => 'Zend\\ModuleManager\\Feature\\ConfigProviderInterface',
+      0 => 'Zend\\ModuleManager\\Feature\\ConfigProviderInterface',
     ),
     'instantiator' => '__construct',
-    'methods' => 
-    array (
-    ),
-    'parameters' => 
-    array (
-    ),
-  ),
-  'WebinoDbDump\\Db\\Sql\\FileInterface' => 
-  array (
-    'supertypes' => 
-    array (
-    ),
-    'instantiator' => NULL,
     'methods' => 
     array (
     ),
@@ -153,6 +139,51 @@ return array (
       ),
     ),
   ),
+  'WebinoDbDump\\Db\\Sql\\FileInterface' => 
+  array (
+    'supertypes' => 
+    array (
+    ),
+    'instantiator' => NULL,
+    'methods' => 
+    array (
+    ),
+    'parameters' => 
+    array (
+    ),
+  ),
+  'WebinoDbDump\\Db\\Dump\\Table\\AbstractExtra' => 
+  array (
+    'supertypes' => 
+    array (
+      0 => 'WebinoDbDump\\Db\\Dump\\Table\\ExtraInterface',
+    ),
+    'instantiator' => NULL,
+    'methods' => 
+    array (
+      '__construct' => 3,
+    ),
+    'parameters' => 
+    array (
+      '__construct' => 
+      array (
+        'WebinoDbDump\\Db\\Dump\\Table\\AbstractExtra::__construct:0' => 
+        array (
+          0 => 'tableName',
+          1 => NULL,
+          2 => true,
+          3 => NULL,
+        ),
+        'WebinoDbDump\\Db\\Dump\\Table\\AbstractExtra::__construct:1' => 
+        array (
+          0 => 'adapter',
+          1 => 'WebinoDbDump\\Db\\Dump\\Adapter',
+          2 => true,
+          3 => NULL,
+        ),
+      ),
+    ),
+  ),
   'WebinoDbDump\\Db\\Dump\\Table\\AbstractTable' => 
   array (
     'supertypes' => 
@@ -184,19 +215,6 @@ return array (
       ),
     ),
   ),
-  'WebinoDbDump\\Db\\Dump\\Table\\TriggersInterface' => 
-  array (
-    'supertypes' => 
-    array (
-    ),
-    'instantiator' => NULL,
-    'methods' => 
-    array (
-    ),
-    'parameters' => 
-    array (
-    ),
-  ),
   'WebinoDbDump\\Db\\Dump\\Table\\AbstractColumns' => 
   array (
     'supertypes' => 
@@ -221,6 +239,19 @@ return array (
       ),
     ),
   ),
+  'WebinoDbDump\\Db\\Dump\\Table\\ExtraInterface' => 
+  array (
+    'supertypes' => 
+    array (
+    ),
+    'instantiator' => NULL,
+    'methods' => 
+    array (
+    ),
+    'parameters' => 
+    array (
+    ),
+  ),
   'WebinoDbDump\\Db\\Dump\\Table\\ColumnsInterface' => 
   array (
     'supertypes' => 
@@ -234,13 +265,48 @@ return array (
     array (
     ),
   ),
-  'WebinoDbDump\\Db\\Dump\\Table\\AbstractTriggers' => 
+  'WebinoDbDump\\Db\\Dump\\Dump' => 
   array (
     'supertypes' => 
     array (
-      0 => 'WebinoDbDump\\Db\\Dump\\Table\\TriggersInterface',
+      0 => 'WebinoDbDump\\Db\\Dump\\DumpInterface',
     ),
-    'instantiator' => NULL,
+    'instantiator' => '__construct',
+    'methods' => 
+    array (
+      '__construct' => 3,
+      'setDumpPlatform' => 0,
+    ),
+    'parameters' => 
+    array (
+      '__construct' => 
+      array (
+        'WebinoDbDump\\Db\\Dump\\Dump::__construct:0' => 
+        array (
+          0 => 'adapter',
+          1 => NULL,
+          2 => true,
+          3 => NULL,
+        ),
+      ),
+      'setDumpPlatform' => 
+      array (
+        'WebinoDbDump\\Db\\Dump\\Dump::setDumpPlatform:0' => 
+        array (
+          0 => 'dumpPlatform',
+          1 => 'WebinoDbDump\\Db\\Dump\\Platform\\PlatformInterface',
+          2 => false,
+          3 => NULL,
+        ),
+      ),
+    ),
+  ),
+  'WebinoDbDump\\Db\\Dump\\Adapter' => 
+  array (
+    'supertypes' => 
+    array (
+    ),
+    'instantiator' => '__construct',
     'methods' => 
     array (
       '__construct' => 3,
@@ -249,17 +315,10 @@ return array (
     array (
       '__construct' => 
       array (
-        'WebinoDbDump\\Db\\Dump\\Table\\AbstractTriggers::__construct:0' => 
-        array (
-          0 => 'tableName',
-          1 => NULL,
-          2 => true,
-          3 => NULL,
-        ),
-        'WebinoDbDump\\Db\\Dump\\Table\\AbstractTriggers::__construct:1' => 
+        'WebinoDbDump\\Db\\Dump\\Adapter::__construct:0' => 
         array (
           0 => 'adapter',
-          1 => 'WebinoDbDump\\Db\\Dump\\Adapter',
+          1 => 'Zend\\Db\\Adapter\\AdapterInterface',
           2 => true,
           3 => NULL,
         ),
@@ -277,30 +336,6 @@ return array (
     ),
     'parameters' => 
     array (
-    ),
-  ),
-  'WebinoDbDump\\Db\\Dump\\Platform\\AbstractPlatform' => 
-  array (
-    'supertypes' => 
-    array (
-    ),
-    'instantiator' => NULL,
-    'methods' => 
-    array (
-      '__construct' => 3,
-    ),
-    'parameters' => 
-    array (
-      '__construct' => 
-      array (
-        'WebinoDbDump\\Db\\Dump\\Platform\\AbstractPlatform::__construct:0' => 
-        array (
-          0 => 'adapter',
-          1 => 'WebinoDbDump\\Db\\Dump\\Adapter',
-          2 => true,
-          3 => NULL,
-        ),
-      ),
     ),
   ),
   'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Table\\Columns' => 
@@ -323,6 +358,40 @@ return array (
         array (
           0 => 'platform',
           1 => 'Zend\\Db\\Adapter\\Platform\\PlatformInterface',
+          2 => true,
+          3 => NULL,
+        ),
+      ),
+    ),
+  ),
+  'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Table\\Triggers' => 
+  array (
+    'supertypes' => 
+    array (
+      0 => 'WebinoDbDump\\Db\\Dump\\Table\\ExtraInterface',
+      1 => 'WebinoDbDump\\Db\\Dump\\Table\\AbstractExtra',
+      2 => 'WebinoDbDump\\Db\\Dump\\Table\\ExtraInterface',
+    ),
+    'instantiator' => '__construct',
+    'methods' => 
+    array (
+      '__construct' => 3,
+    ),
+    'parameters' => 
+    array (
+      '__construct' => 
+      array (
+        'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Table\\Triggers::__construct:0' => 
+        array (
+          0 => 'tableName',
+          1 => NULL,
+          2 => true,
+          3 => NULL,
+        ),
+        'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Table\\Triggers::__construct:1' => 
+        array (
+          0 => 'adapter',
+          1 => 'WebinoDbDump\\Db\\Dump\\Adapter',
           2 => true,
           3 => NULL,
         ),
@@ -361,13 +430,49 @@ return array (
       ),
     ),
   ),
-  'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Table\\Triggers' => 
+  'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Routine\\AbstractRoutine' => 
   array (
     'supertypes' => 
     array (
-      0 => 'WebinoDbDump\\Db\\Dump\\Table\\TriggersInterface',
-      1 => 'WebinoDbDump\\Db\\Dump\\Table\\AbstractTriggers',
-      2 => 'WebinoDbDump\\Db\\Dump\\Table\\TriggersInterface',
+      0 => 'WebinoDbDump\\Db\\Dump\\Table\\ExtraInterface',
+      1 => 'WebinoDbDump\\Db\\Dump\\Table\\AbstractExtra',
+      2 => 'WebinoDbDump\\Db\\Dump\\Table\\ExtraInterface',
+    ),
+    'instantiator' => NULL,
+    'methods' => 
+    array (
+      '__construct' => 3,
+    ),
+    'parameters' => 
+    array (
+      '__construct' => 
+      array (
+        'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Routine\\AbstractRoutine::__construct:0' => 
+        array (
+          0 => 'tableName',
+          1 => NULL,
+          2 => true,
+          3 => NULL,
+        ),
+        'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Routine\\AbstractRoutine::__construct:1' => 
+        array (
+          0 => 'adapter',
+          1 => 'WebinoDbDump\\Db\\Dump\\Adapter',
+          2 => true,
+          3 => NULL,
+        ),
+      ),
+    ),
+  ),
+  'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Routine\\Procedure' => 
+  array (
+    'supertypes' => 
+    array (
+      0 => 'WebinoDbDump\\Db\\Dump\\Table\\ExtraInterface',
+      1 => 'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Routine\\AbstractRoutine',
+      2 => 'WebinoDbDump\\Db\\Dump\\Table\\ExtraInterface',
+      3 => 'WebinoDbDump\\Db\\Dump\\Table\\AbstractExtra',
+      4 => 'WebinoDbDump\\Db\\Dump\\Table\\ExtraInterface',
     ),
     'instantiator' => '__construct',
     'methods' => 
@@ -378,14 +483,14 @@ return array (
     array (
       '__construct' => 
       array (
-        'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Table\\Triggers::__construct:0' => 
+        'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Routine\\Procedure::__construct:0' => 
         array (
           0 => 'tableName',
           1 => NULL,
           2 => true,
           3 => NULL,
         ),
-        'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Table\\Triggers::__construct:1' => 
+        'WebinoDbDump\\Db\\Dump\\Platform\\Mysql\\Routine\\Procedure::__construct:1' => 
         array (
           0 => 'adapter',
           1 => 'WebinoDbDump\\Db\\Dump\\Adapter',
@@ -421,6 +526,30 @@ return array (
       ),
     ),
   ),
+  'WebinoDbDump\\Db\\Dump\\Platform\\AbstractPlatform' => 
+  array (
+    'supertypes' => 
+    array (
+    ),
+    'instantiator' => NULL,
+    'methods' => 
+    array (
+      '__construct' => 3,
+    ),
+    'parameters' => 
+    array (
+      '__construct' => 
+      array (
+        'WebinoDbDump\\Db\\Dump\\Platform\\AbstractPlatform::__construct:0' => 
+        array (
+          0 => 'adapter',
+          1 => 'WebinoDbDump\\Db\\Dump\\Adapter',
+          2 => true,
+          3 => NULL,
+        ),
+      ),
+    ),
+  ),
   'WebinoDbDump\\Db\\Dump\\Platform\\PlatformInterface' => 
   array (
     'supertypes' => 
@@ -432,66 +561,6 @@ return array (
     ),
     'parameters' => 
     array (
-    ),
-  ),
-  'WebinoDbDump\\Db\\Dump\\Adapter' => 
-  array (
-    'supertypes' => 
-    array (
-    ),
-    'instantiator' => '__construct',
-    'methods' => 
-    array (
-      '__construct' => 3,
-    ),
-    'parameters' => 
-    array (
-      '__construct' => 
-      array (
-        'WebinoDbDump\\Db\\Dump\\Adapter::__construct:0' => 
-        array (
-          0 => 'adapter',
-          1 => 'Zend\\Db\\Adapter\\AdapterInterface',
-          2 => true,
-          3 => NULL,
-        ),
-      ),
-    ),
-  ),
-  'WebinoDbDump\\Db\\Dump\\Dump' => 
-  array (
-    'supertypes' => 
-    array (
-      0 => 'WebinoDbDump\\Db\\Dump\\DumpInterface',
-    ),
-    'instantiator' => '__construct',
-    'methods' => 
-    array (
-      '__construct' => 3,
-      'setDumpPlatform' => 0,
-    ),
-    'parameters' => 
-    array (
-      '__construct' => 
-      array (
-        'WebinoDbDump\\Db\\Dump\\Dump::__construct:0' => 
-        array (
-          0 => 'adapter',
-          1 => NULL,
-          2 => true,
-          3 => NULL,
-        ),
-      ),
-      'setDumpPlatform' => 
-      array (
-        'WebinoDbDump\\Db\\Dump\\Dump::setDumpPlatform:0' => 
-        array (
-          0 => 'dumpPlatform',
-          1 => 'WebinoDbDump\\Db\\Dump\\Platform\\PlatformInterface',
-          2 => false,
-          3 => NULL,
-        ),
-      ),
     ),
   ),
 );

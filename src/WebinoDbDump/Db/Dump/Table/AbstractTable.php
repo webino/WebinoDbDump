@@ -65,9 +65,9 @@ abstract class AbstractTable
     abstract protected function createColumns();
 
     /**
-     * @return TableTriggersInterface
+     * @return ExtraInterface[]
      */
-    abstract protected function createTriggers();
+    abstract protected function createExtras();
 
     /**
      * @return string
@@ -140,7 +140,9 @@ abstract class AbstractTable
         $this->isView() or
             $this->writeData($file);
 
-        $this->createTriggers()->writeIfAny($file);
+        foreach ($this->createExtras() as $extra) {
+            $extra->writeIfAny($file);
+        }
 
         return $this;
     }

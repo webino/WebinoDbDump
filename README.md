@@ -134,6 +134,7 @@ Setting up development environment of the package.
   - Add support for more platforms (currently only Mysql)
   - Better exceptions
   - More options
+  - Events dump
 
 ## Addendum
 

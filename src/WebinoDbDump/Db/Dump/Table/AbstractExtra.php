@@ -18,7 +18,7 @@ use Zend\Db\ResultSet\ResultSet;
  *
  * @author Peter Bačinský <peter@bacinsky.sk>
  */
-abstract class AbstractTriggers implements TriggersInterface
+abstract class AbstractExtra implements ExtraInterface
 {
     /**
      * @var string

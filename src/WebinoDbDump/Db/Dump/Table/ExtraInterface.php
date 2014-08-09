@@ -16,7 +16,7 @@ use SplFileObject as File;
  *
  * @author Peter Bačinský <peter@bacinsky.sk>
  */
-interface TriggersInterface
+interface ExtraInterface
 {
     /**
      * @param File $file

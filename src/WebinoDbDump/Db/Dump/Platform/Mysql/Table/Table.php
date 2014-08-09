@@ -9,6 +9,7 @@
 
 namespace WebinoDbDump\Db\Dump\Platform\Mysql\Table;
 
+use WebinoDbDump\Db\Dump\Platform\Mysql\Routine\Procedure;
 use WebinoDbDump\Db\Dump\Table\AbstractTable;
 
 /**
@@ -70,9 +71,12 @@ class Table extends AbstractTable
     /**
      *
      */
-    protected function createTriggers()
+    protected function createExtras()
     {
-        return new Triggers($this->rawName, $this->adapter);
+        return [
+            new Triggers($this->rawName, $this->adapter),
+            new Procedure($this->rawName, $this->adapter),
+        ];
     }
 
     /**
