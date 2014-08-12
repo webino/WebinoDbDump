@@ -12,7 +12,7 @@ namespace WebinoDbDump\Db\Dump\Platform\Mysql\Routine;
 use ArrayObject;
 
 /**
- * Mysql database dump utility platform triggers
+ * Mysql database dump utility platform procedure
  *
  * @author Peter Bačinský <peter@bacinsky.sk>
  */
@@ -23,7 +23,8 @@ class Procedure extends AbstractRoutine
      */
     protected function show()
     {
-        return $this->adapter->executeQuery('SHOW PROCEDURE STATUS');
+        $identifier = $this->getPlatform()->quoteValue($this->adapter->getSchema());
+        return $this->adapter->executeQuery('SHOW PROCEDURE STATUS WHERE Db=' . $identifier);
     }
 
     /**
@@ -35,7 +36,7 @@ class Procedure extends AbstractRoutine
     }
 
     /**
-     * 
+     *
      */
     public function createQuery($identifier, ArrayObject $create)
     {

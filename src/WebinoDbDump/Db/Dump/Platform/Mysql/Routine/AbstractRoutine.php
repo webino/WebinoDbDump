@@ -15,7 +15,7 @@ use WebinoDbDump\Db\Dump\Table\AbstractExtra;
 use Zend\Db\ResultSet\ResultSet;
 
 /**
- * Mysql database dump utility platform triggers
+ * Mysql database dump utility platform routine
  *
  * @author Peter Bačinský <peter@bacinsky.sk>
  */

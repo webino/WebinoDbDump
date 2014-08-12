@@ -41,6 +41,16 @@ class Adapter
     }
 
     /**
+     * Returns database name
+     *
+     * @return string
+     */
+    public function getSchema()
+    {
+        return $this->adapter->getDriver()->getConnection()->getCurrentSchema();
+    }
+
+    /**
      * @param string $sql
      * @return \Zend\Db\ResultSet\ResultSet
      */
