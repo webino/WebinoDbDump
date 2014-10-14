@@ -24,14 +24,14 @@ abstract class AbstractRoutine extends AbstractExtra
     /**
      *
      */
-    protected abstract function showCreate($identifier);
+    abstract protected function showCreate($identifier);
 
     /**
      * @param string $identifier
      * @param ArrayObject $create
      * @return string
      */
-    protected abstract function createQuery($identifier, ArrayObject $create);
+    abstract protected function createQuery($identifier, ArrayObject $create);
 
     /**
      *
