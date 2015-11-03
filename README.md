@@ -7,12 +7,12 @@
   [![Coverage Status](https://coveralls.io/repos/webino/WebinoDbDump/badge.png?branch=develop)](https://coveralls.io/r/webino/WebinoDbDump?branch=develop "Develop Coverage Status")
   [![Dependency Status](https://www.versioneye.com/user/projects/52f49150ec1375fd0b000011/badge.png)](https://www.versioneye.com/user/projects/529f8de6632bac79c600003d "Develop Dependency Status")
 
-  [![Latest Stable Version](https://poser.pugx.org/webino/webino-dbdump/v/stable.png)](https://packagist.org/packages/webino/webino-dbdump "Latest Stable Version")
-  [![Latest Unstable Version](https://poser.pugx.org/webino/webino-dbdump/v/unstable.png)](https://packagist.org/packages/webino/webino-dbdump "Latest Unstable Version")
+  [![Latest Stable Version](https://poser.pugx.org/webino/webino-db-dump/v/stable.png)](https://packagist.org/packages/webino/webino-db-dump "Latest Stable Version")
+  [![Latest Unstable Version](https://poser.pugx.org/webino/webino-db-dump/v/unstable.png)](https://packagist.org/packages/webino/webino-db-dump "Latest Unstable Version")
   [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/webino/WebinoDbDump/badges/quality-score.png?s=8d3022ff486c05b5244577e92d5968890d28f8f4)](https://scrutinizer-ci.com/g/webino/WebinoDbDump/ "Quality Score")
-  [![Daily Downloads](https://poser.pugx.org/webino/webino-dbdump/d/daily.png)](https://packagist.org/packages/webino/webino-dbdump "Daily Downloads")
-  [![Montly Downloads](https://poser.pugx.org/webino/webino-dbdump/d/monthly.png)](https://packagist.org/packages/webino/webino-dbdump "Monthly Downloads")
-  [![Total Downloads](https://poser.pugx.org/webino/webino-dbdump/downloads.png)](https://packagist.org/packages/webino/webino-dbdump "Total Downloads")
+  [![Daily Downloads](https://poser.pugx.org/webino/webino-db-dump/d/daily.png)](https://packagist.org/packages/webino/webino-db-dump "Daily Downloads")
+  [![Montly Downloads](https://poser.pugx.org/webino/webino-db-dump/d/monthly.png)](https://packagist.org/packages/webino/webino-db-dump "Monthly Downloads")
+  [![Total Downloads](https://poser.pugx.org/webino/webino-db-dump/downloads.png)](https://packagist.org/packages/webino/webino-db-dump "Total Downloads")
 
   Utility used to dump a database into a SQL file, and to load that file into a database.
 
@@ -29,7 +29,7 @@
 
   1. Add `"minimum-stability": "dev"` to your composer.json, because this module is under development
 
-  2. Run `php composer.phar require webino/webino-dbdump:dev-develop`
+  2. Run `php composer.phar require webino/webino-db-dump:dev-develop`
 
   3. Add `WebinoDbDump` to the enabled modules list
 

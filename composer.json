@@ -1,47 +1,37 @@
 {
-    "name": "webino/webino-dbdump",
+    "name":        "webino/webino-db-dump",
     "description": "Database Dump Utility for Zend Framework 2",
-    "type": "library",
-    "keywords": [
-        "database", "db", "dump", "webino", "zf2", "zend", "framework"
-    ],
-    "homepage": "http://github.com/webino/WebinoDbDump",
-    "license": "BSD-3-Clause",
+    "type":        "library",
+    "keywords":    ["database", "db", "dump", "webino", "zf2", "zend", "framework"],
+    "homepage":    "http://github.com/webino/WebinoDbDump",
+    "license":     "BSD-3-Clause",
     "authors": [
         {
-            "name": "Webino, s. r. o.",
-            "email": "info@webino.sk",
+            "name":     "Webino, s. r. o.",
+            "email":    "info@webino.sk",
             "homepage": "http://webino.sk",
-            "role": "Developer"
+            "role":     "Developer"
         },
         {
-            "name": "Peter Bačinský",
-            "email": "peter@bacinsky.sk",
+            "name":     "Peter Bacinsky",
+            "email":    "peter@bacinsky.sk",
             "homepage": "http://bacinsky.sk",
-            "role": "Developer"
+            "role":     "Developer"
         }
     ],
+    "replace": {
+        "webino/webino-dbdump": "self.version"
+    },
     "require": {
         "php": ">=5.4",
         "zendframework/zend-db": "2.*"
     },
     "require-dev": {
-        "element-34/php-webdriver": "1.*",
-        "mayflower/php-codebrowser": "*",
-        "pdepend/pdepend": "1.*",
-        "phpdocumentor/phpdocumentor": "2.*",
-        "phploc/phploc": "*",
-        "phpmd/phpmd": "1.*",
-        "phpunit/phpunit": "3.7.*",
-        "satooshi/php-coveralls": "0.*",
-        "sebastian/phpcpd": "*",
-        "squizlabs/php_codesniffer": "1.*",
-        "webino/zf2nette-debug" : "1.*",
-        "zendframework/zendframework": "2.*"
+        "webino/webino-dev": "dev-develop",
+        "webino/webino-debug": "dev-develop",
+        "zendframework/zend-di": "2.*"
     },
     "autoload": {
-        "psr-0": {
-            "WebinoDbDump": "src/"
-        }
+        "psr-0": {"WebinoDbDump": "src/"}
     }
 }

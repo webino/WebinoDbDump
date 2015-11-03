@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Do not write your custom settings into this file
  */

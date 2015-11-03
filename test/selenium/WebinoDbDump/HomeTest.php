@@ -3,27 +3,24 @@
  * Webino (http://webino.sk)
  *
  * @link        https://github.com/webino/WebinoDbDump for the canonical source repository
- * @copyright   Copyright (c) 2014 Webino, s. r. o. (http://webino.sk)
- * @license     The BSD 3-Clause License
+ * @copyright   Copyright (c) 2014-2015 Webino, s. r. o. (http://webino.sk)
+ * @license     BSD-3-Clause
  */
 
 namespace WebinoDbDump;
 
+use WebinoDev\Test\Selenium\AbstractTestCase;
+
 /**
- * @author Peter Bačinský <peter@bacinsky.sk>
+ * Class HomeTest
  */
-class HomeTest extends AbstractBase
+class HomeTest extends AbstractTestCase
 {
     /**
      *
      */
     public function testHome()
     {
-        $this->session->open($this->uri);
-
-        $src = $this->session->source();
-        $this->assertNotContains('Error', $src, null, true);
-        $this->assertNotContains('Exception', $src, null, true);
-        $this->assertContains('Welcome to', $src);
+        $this->openOk();
     }
 }
