@@ -1,4 +1,3 @@
-nbproject/private
 ._*
 .~lock.*
 .buildpath
@@ -6,6 +5,7 @@ nbproject/private
 .idea
 .project
 .settings
+nbproject
 composer.lock
 composer.phar
 node_modules
