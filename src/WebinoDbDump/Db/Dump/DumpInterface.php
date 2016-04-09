@@ -9,6 +9,8 @@
 
 namespace WebinoDbDump\Db\Dump;
 
+use WebinoDbDump\Db\Sql\SqlInterface;
+
 /**
  * Database dump utility interface
  *
@@ -27,4 +29,10 @@ interface DumpInterface
      * @return $this
      */
     public function load($filePath);
+
+    /**
+     * @param SqlInterface $file
+     * @return $this
+     */
+    public function read(SqlInterface $file);
 }
