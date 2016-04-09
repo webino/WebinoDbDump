@@ -3,20 +3,18 @@
  * Webino (http://webino.sk)
  *
  * @link        https://github.com/webino/WebinoDbDump for the canonical source repository
- * @copyright   Copyright (c) 2014 Webino, s. r. o. (http://webino.sk)
+ * @copyright   Copyright (c) 2016 Webino, s. r. o. (http://webino.sk)
  * @license     The BSD 3-Clause License
  */
 
 namespace WebinoDbDump\Db\Sql;
 
-use SplFileObject as BaseFile;
-
 /**
- * Sql file
+ * Sql trait
  *
  * @author Peter Bačinský <peter@bacinsky.sk>
  */
-class File extends BaseFile implements FileInterface
+trait SqlTrait
 {
     /**
      * @var string
@@ -29,31 +27,38 @@ class File extends BaseFile implements FileInterface
     protected $current;
 
     /**
+     * @param callable $callback
+     * @return mixed
+     */
+    abstract protected function eachQuery(callable $callback);
+
+    /**
      * @return string
      */
-    public function fgetsql()
+    public function getSql()
     {
         $query = '';
-        while ($line = parent::current()) {
-            parent::next();
 
+        $this->eachQuery(function ($line) use (&$query) {
             if (0 === strpos($line, '--')) {
                 // skip comments
-                continue;
+                return false;
             }
 
             $match = [];
             if (preg_match('~delimiter\s*([^\s]+)$~iS', $line, $match)) {
                 $this->delimiter = $match[1];
-                continue;
+                return false;
             }
 
             $query .= $line;
 
             if (preg_match('~' . preg_quote($this->delimiter, '~') . '\s*$~iS', $line)) {
-                break;
+                return true;
             }
-        }
+
+            return null;
+        });
 
         return trim($query);
     }
@@ -64,9 +69,8 @@ class File extends BaseFile implements FileInterface
     public function valid()
     {
         if (null === $this->current) {
-            $this->current = $this->fgetsql();
+            $this->current = $this->getSql();
         }
-
         return !empty($this->current);
     }
 
@@ -79,10 +83,10 @@ class File extends BaseFile implements FileInterface
     }
 
     /**
-     *
+     * @return void
      */
     public function next()
     {
-        $this->current = $this->fgetsql();
+        $this->current = $this->getSql();
     }
 }

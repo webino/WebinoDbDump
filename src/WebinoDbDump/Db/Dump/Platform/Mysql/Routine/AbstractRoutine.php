@@ -3,7 +3,7 @@
  * Webino (http://webino.sk)
  *
  * @link        https://github.com/webino/WebinoDbDump for the canonical source repository
- * @copyright   Copyright (c) 2014 Webino, s. r. o. (http://webino.sk)
+ * @copyright   Copyright (c) 2014-2016 Webino, s. r. o. (http://webino.sk)
  * @license     The BSD 3-Clause License
  */
 
@@ -22,7 +22,8 @@ use Zend\Db\ResultSet\ResultSet;
 abstract class AbstractRoutine extends AbstractExtra
 {
     /**
-     *
+     * @param string $identifier
+     * @return string
      */
     abstract protected function showCreate($identifier);
 
@@ -34,7 +35,9 @@ abstract class AbstractRoutine extends AbstractExtra
     abstract protected function createQuery($identifier, ArrayObject $create);
 
     /**
-     *
+     * @param File $file
+     * @param ResultSet $procedures
+     * @return $this
      */
     protected function write(File $file, ResultSet $procedures)
     {

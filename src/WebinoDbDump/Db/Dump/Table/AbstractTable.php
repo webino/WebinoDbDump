@@ -3,7 +3,7 @@
  * Webino (http://webino.sk)
  *
  * @link        https://github.com/webino/WebinoDbDump for the canonical source repository
- * @copyright   Copyright (c) 2014 Webino, s. r. o. (http://webino.sk)
+ * @copyright   Copyright (c) 2014-2016 Webino, s. r. o. (http://webino.sk)
  * @license     The BSD 3-Clause License
  */
 
@@ -91,7 +91,7 @@ abstract class AbstractTable
 
     /**
      * @param string $name
-     * @return self
+     * @return $this
      */
     protected function setName($name)
     {
@@ -105,6 +105,7 @@ abstract class AbstractTable
     protected function isView()
     {
         if (null === $this->view) {
+            // TODO exception
             throw new \RuntimeException('Don\'t know if is view');
         }
 
@@ -113,7 +114,7 @@ abstract class AbstractTable
 
     /**
      * @param bool $view
-     * @return self
+     * @return $this
      */
     protected function setView($view)
     {
@@ -131,14 +132,12 @@ abstract class AbstractTable
 
     /**
      * @param File $file
-     * @return self
+     * @return $this
      */
     public function write(File $file)
     {
         $file->fwrite($this->create());
-
-        $this->isView() or
-            $this->writeData($file);
+        $this->isView() or $this->writeData($file);
 
         foreach ($this->createExtras() as $extra) {
             $extra->writeIfAny($file);
@@ -149,7 +148,7 @@ abstract class AbstractTable
 
     /**
      * @param File $file
-     * @return self
+     * @return $this
      */
     private function writeData(File $file)
     {

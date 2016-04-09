@@ -3,7 +3,7 @@
  * Webino (http://webino.sk)
  *
  * @link        https://github.com/webino/WebinoDbDump for the canonical source repository
- * @copyright   Copyright (c) 2014 Webino, s. r. o. (http://webino.sk)
+ * @copyright   Copyright (c) 2014-2016 Webino, s. r. o. (http://webino.sk)
  * @license     The BSD 3-Clause License
  */
 
@@ -26,7 +26,7 @@ class Table extends AbstractTable
 
     /**
      * @param string $name
-     * @return self
+     * @return $this
      */
     protected function setName($name)
     {
@@ -61,7 +61,7 @@ class Table extends AbstractTable
     }
 
     /**
-     *
+     * @return Columns
      */
     protected function createColumns()
     {
@@ -69,7 +69,7 @@ class Table extends AbstractTable
     }
 
     /**
-     *
+     * @return array[Triggers, Procedure]
      */
     protected function createExtras()
     {

@@ -3,14 +3,13 @@
  * Webino (http://webino.sk)
  *
  * @link        https://github.com/webino/WebinoDbDump for the canonical source repository
- * @copyright   Copyright (c) 2014 Webino, s. r. o. (http://webino.sk)
+ * @copyright   Copyright (c) 2014-2016 Webino, s. r. o. (http://webino.sk)
  * @license     The BSD 3-Clause License
  */
 
 namespace WebinoDbDump\Db\Dump\Platform;
 
 use ArrayObject;
-use SplFileObject as File;
 
 /**
  * Interface for a dump utility platform
@@ -21,7 +20,7 @@ interface PlatformInterface
 {
     /**
      * @param ArrayObject $table
-     * @return Table
+     * @return \WebinoDbDump\Db\Dump\Table\AbstractTable
      */
     public function createTable(ArrayObject $table);
 
