@@ -55,6 +55,9 @@
         // drops & creates tables/views, triggers and inserts the data
         $dbDump->load('example/dump.sql');
 
+        // or from string
+        $dbDump->read(new \WebinoDbDump\Db\Sql\SqlString('CREATE TABLE...'));
+
     *NOTE: If you don't know how to inject the WebinoDbDump into action controller, check out `test/resources`.*
 
     *NOTE: Use stream wrappers, e.g. `compress.zlib://example.dump.sql.gz`, if you want compression.*
@@ -64,7 +67,7 @@
 ### 0.2.0 [UNRELEASED]
 
   - Slightly redesigned
-  - Added SqlInMemory support
+  - Added SqlString support
 
 ### 0.1.0
 
