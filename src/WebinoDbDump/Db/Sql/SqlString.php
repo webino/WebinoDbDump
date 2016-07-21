@@ -28,7 +28,7 @@ class SqlString implements SqlInterface
      */
     public function __construct($sql)
     {
-        $this->lines = explode(PHP_EOL, $sql);
+        empty($sql) or $this->lines = explode(PHP_EOL, $sql);
     }
 
     /**
