@@ -23,7 +23,7 @@
         "webino/webino-dbdump": "self.version"
     },
     "require": {
-        "php": ">=5.4",
+        "php": ">=5.6",
         "zendframework/zend-db": "2.*"
     },
     "require-dev": {
