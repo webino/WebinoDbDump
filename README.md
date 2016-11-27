@@ -12,8 +12,8 @@
 
 ## Features
 
-  - Dump an entire database into an SQL file
-  - Load an SQL file into a database
+  - Dump an entire database into a SQL file
+  - Load a SQL file into a database
 
 ## Setup
 
