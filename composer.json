@@ -22,6 +22,8 @@
     "replace": {
         "webino/webino-dbdump": "self.version"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.6",
         "zendframework/zend-db": "2.*"
@@ -29,9 +31,21 @@
     "require-dev": {
         "webino/webino-dev": "dev-develop",
         "webino/webino-debug": "dev-develop",
-        "zendframework/zend-di": "2.*"
+        "zendframework/zend-di": "2.*",
+        "zendframework/zend-log": "2.*",
+        "zendframework/zend-i18n": "2.*",
+        "zendframework/zend-view": "2.*",
+        "zendframework/zend-http": "2.*",
+        "zendframework/zend-console": "2.*",
+        "zendframework/zend-version": "2.*",
+        "zendframework/zend-mvc": "2.6.*"
     },
     "autoload": {
         "psr-0": {"WebinoDbDump": "src/"}
+    },
+    "extra": {
+        "webino-devkit": {
+            "ZendSkeletonApplication": "release-2.2.8"
+        }
     }
 }

@@ -2,11 +2,17 @@
 /**
  * Webino (http://webino.sk)
  *
- * @link        https://github.com/webino/WebinoDbDump for the canonical source repository
- * @copyright   Copyright (c) 2014-2015 Webino, s. r. o. (http://webino.sk)
+ * @link        https://github.com/webino/WebinoDbDump/ for the canonical source repository
+ * @copyright   Copyright (c) 2014-2016 Webino, s. r. o. (http://webino.sk)
  * @author      Peter Bačinský <peter@bacinsky.sk>
  * @license     BSD-3-Clause
  */
+
+use Application\Controller\IndexController;
+use Zend\Db\Adapter\Adapter;
+use Zend\Db\Adapter\AdapterAbstractServiceFactory;
+use Zend\I18n\Translator\TranslatorInterface;
+use Zend\I18n\Translator\TranslatorServiceFactory;
 
 return [
     'router' => [
@@ -18,7 +24,7 @@ return [
                          * We want to use the DI, so override the application
                          * module config with a controller FQCN, instead of invocable alias
                          */
-                        'controller' => 'Application\Controller\IndexController',
+                        'controller' => IndexController::class,
                     ],
                 ],
             ],
@@ -26,17 +32,17 @@ return [
     ],
     'di' => [
         'allowed_controllers' => [
-            'Application\Controller\IndexController',
+            IndexController::class,
         ],
         'instance' => [
             'alias' => [
-                'DefaultDb' => 'Zend\Db\Adapter\Adapter',
+                'DefaultDbAdapter' => Adapter::class,
             ],
             /**
              * Configure the controller
              * to inject database dump utility
              */
-            'Application\Controller\IndexController' => [
+            IndexController::class => [
                 'parameters' => [
                     'dbDump' => 'DefaultDbDump',
                 ],
@@ -45,10 +51,10 @@ return [
     ],
     'service_manager' => [
         'abstract_factories' => [
-            'Zend\Db\Adapter\AdapterAbstractServiceFactory',
+            AdapterAbstractServiceFactory::class,
         ],
         'factories' => [
-            'Zend\I18n\Translator\TranslatorInterface' => 'Zend\I18n\Translator\TranslatorServiceFactory',
+            TranslatorInterface::class => TranslatorServiceFactory::class,
         ],
     ],
     'db' => [
@@ -58,9 +64,9 @@ return [
          'adapters' => [
             'DefaultDbAdapter' => [
                 'driver'   => 'pdo',
-                'dsn'      => 'mysql:dbname=dev_test;host=localhost',
-                'username' => 'webino',
-                'password' => 'db4webino',
+                'dsn'      => 'mysql:dbname=CHANGEME;host=CHANGEME',
+                'username' => 'CHANGEME',
+                'password' => 'CHANGEME',
             ],
          ],
     ],

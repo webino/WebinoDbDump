@@ -88,6 +88,7 @@ Learn [How to develop Webino modules](https://github.com/webino/Webino/wiki/How-
   - Better exceptions
   - More options
   - Events dump
+  - Upgrade Zend MVC
 
 ## Addendum
 

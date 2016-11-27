@@ -1,15 +1,7 @@
 <phpunit bootstrap="bootstrap.php">
-    <filter>
-        <whitelist addUncoveredFilesFromWhitelist="true">
-            <directory>../src</directory>
-        </whitelist>
-    </filter>
     <testsuites>
-        <testsuite name="unit">
+        <testsuite name="home">
             <directory>WebinoDbDump</directory>
-        </testsuite>
-        <testsuite name="functional">
-            <directory>functional/WebinoDbDump</directory>
         </testsuite>
     </testsuites>
     <listeners>

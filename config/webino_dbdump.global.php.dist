@@ -1,17 +1,16 @@
 <?php
 
+use WebinoDbDump\Db\Dump\Dump;
+
 return [
     'di' => [
         'instance' => [
             'alias' => [
-                'DefaultDbDump' => 'WebinoDbDump\Db\Dump\Dump',
+                'DefaultDbDump' => Dump::class,
             ],
             'DefaultDbDump' => [
                 'parameters' => [
-                    // TODO uncomment
-                    // TODO issue https://github.com/zendframework/zf2/issues/5795
-                    // 'adapter' => 'DefaultDb',
-                    'adapter' => 'Zend\Db\Adapter\Adapter',
+                    'adapter' => 'DefaultDbAdapter',
                 ],
             ],
         ],
