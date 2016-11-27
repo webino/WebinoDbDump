@@ -2,11 +2,13 @@
 
   [![Build Status](https://secure.travis-ci.org/webino/WebinoDbDump.png?branch=develop)](http://travis-ci.org/webino/WebinoDbDump "Develop Build Status")
   [![Coverage Status](https://coveralls.io/repos/webino/WebinoDbDump/badge.png?branch=develop)](https://coveralls.io/r/webino/WebinoDbDump?branch=develop "Develop Coverage Status")
+  [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/webino/WebinoDbDump/badges/quality-score.png?s=8d3022ff486c05b5244577e92d5968890d28f8f4)](https://scrutinizer-ci.com/g/webino/WebinoDbDump/ "Quality Score")
   [![Dependency Status](https://www.versioneye.com/user/projects/52f49150ec1375fd0b000011/badge.png)](https://www.versioneye.com/user/projects/529f8de6632bac79c600003d "Develop Dependency Status")
 
   [![Latest Stable Version](https://poser.pugx.org/webino/webino-db-dump/v/stable.png)](https://packagist.org/packages/webino/webino-db-dump "Latest Stable Version")
-  [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/webino/WebinoDbDump/badges/quality-score.png?s=8d3022ff486c05b5244577e92d5968890d28f8f4)](https://scrutinizer-ci.com/g/webino/WebinoDbDump/ "Quality Score")
   [![Total Downloads](https://poser.pugx.org/webino/webino-db-dump/downloads.png)](https://packagist.org/packages/webino/webino-db-dump "Total Downloads")
+  [![Latest Unstable Version](https://poser.pugx.org/webino/webino-db-dump/v/unstable.png)](https://packagist.org/packages/webino/webino-db-dump "Latest Unstable Version")
+  [![License](https://poser.pugx.org/webino/webino-db-dump/license.svg)](https://packagist.org/packages/webino/webino-db-dump)
 
   Utility used to dump a database into a SQL file, and to load that file into a database.
 
