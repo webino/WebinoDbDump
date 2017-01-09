@@ -3,7 +3,8 @@
  * Webino (http://webino.sk)
  *
  * @link        https://github.com/webino/WebinoDbDump/ for the canonical source repository
- * @copyright   Copyright (c) 2014-2016 Webino, s. r. o. (http://webino.sk)
+ * @copyright   Copyright (c) 2014-2017 Webino, s. r. o. (http://webino.sk)
+ * @author      Peter Bačinský <peter@bacinsky.sk>
  * @license     The BSD 3-Clause License
  */
 
@@ -13,13 +14,12 @@ use SplFileObject as File;
 use WebinoDbDump\Db\Dump\Platform\PlatformInterface;
 use WebinoDbDump\Db\Sql\SqlFile;
 use WebinoDbDump\Db\Sql\SqlInterface;
+use WebinoDbDump\Exception;
 use WebinoDbDump\Module;
 use Zend\Db\Adapter\AdapterInterface;
 
 /**
  * Database dump utility
- *
- * @author Peter Bačinský <peter@bacinsky.sk>
  */
 class Dump implements DumpInterface
 {
@@ -49,6 +49,7 @@ class Dump implements DumpInterface
     /**
      * @param AdapterInterface|Adapter $adapter
      * @return $this
+     * @throws Exception\InvalidArgumentException
      */
     protected function setAdapter($adapter)
     {
@@ -56,8 +57,7 @@ class Dump implements DumpInterface
             $adapter = new Adapter($adapter);
 
         } elseif (!($adapter instanceof Adapter)) {
-            // TODO exception
-            throw new \InvalidArgumentException('Expected Db\Adapter or Dump\Adapter');
+            throw new Exception\InvalidArgumentException('Expected Db\Adapter or Dump\Adapter');
         }
 
         $this->adapter = $adapter;
@@ -99,15 +99,14 @@ class Dump implements DumpInterface
      *
      * @param string $filePath
      * @return File
-     * @throws \RuntimeException
+     * @throws Exception\RuntimeException
      */
     public function createOutputFile($filePath)
     {
         try {
             return new File($filePath, 'wb');
         } catch (\Exception $exc) {
-            // TODO exception
-            throw new \RuntimeException(
+            throw new Exception\RuntimeException(
                 sprintf('Can\'t open file for writing `%s`', $filePath),
                 $exc->getCode(),
                 $exc
@@ -122,15 +121,14 @@ class Dump implements DumpInterface
      *
      * @param string $filePath
      * @return SqlFile
-     * @throws \RuntimeException
+     * @throws Exception\RuntimeException
      */
     public function createInputFile($filePath)
     {
         try {
             return new SqlFile($filePath, 'rb');
         } catch (\Exception $exc) {
-            // TODO exception
-            throw new \RuntimeException(
+            throw new Exception\RuntimeException(
                 sprintf('Can\'t open file for reading `%s`', $filePath),
                 $exc->getCode(),
                 $exc

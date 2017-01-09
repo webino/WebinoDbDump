@@ -3,19 +3,19 @@
  * Webino (http://webino.sk)
  *
  * @link        https://github.com/webino/WebinoDbDump/ for the canonical source repository
- * @copyright   Copyright (c) 2014-2016 Webino, s. r. o. (http://webino.sk)
+ * @copyright   Copyright (c) 2014-2017 Webino, s. r. o. (http://webino.sk)
+ * @author      Peter Bačinský <peter@bacinsky.sk>
  * @license     The BSD 3-Clause License
  */
 
 namespace WebinoDbDump\Db\Dump;
 
+use WebinoDbDump\Exception;
 use Zend\Db\Adapter\Adapter as DbAdapter;
 use Zend\Db\Adapter\AdapterInterface as DbAdapterInterface;
 
 /**
  * Database dump utility adapter
- *
- * @author Peter Bačinský <peter@bacinsky.sk>
  */
 class Adapter
 {
@@ -53,9 +53,16 @@ class Adapter
     /**
      * @param string $sql
      * @return \Zend\Db\ResultSet\ResultSet
+     * @throws Exception\SqlQueryException
      */
     public function executeQuery($sql)
     {
-        return $this->adapter->query($sql, DbAdapter::QUERY_MODE_EXECUTE);
+        try {
+            return $this->adapter->query($sql, DbAdapter::QUERY_MODE_EXECUTE);
+        } catch (\Exception $exc) {
+            throw new Exception\SqlQueryException(
+                PHP_EOL . $exc->getMessage() . PHP_EOL . $sql . PHP_EOL
+            );
+        }
     }
 }

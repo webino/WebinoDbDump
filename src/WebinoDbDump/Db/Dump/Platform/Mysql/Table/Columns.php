@@ -3,7 +3,8 @@
  * Webino (http://webino.sk)
  *
  * @link        https://github.com/webino/WebinoDbDump/ for the canonical source repository
- * @copyright   Copyright (c) 2014-2016 Webino, s. r. o. (http://webino.sk)
+ * @copyright   Copyright (c) 2014-2017 Webino, s. r. o. (http://webino.sk)
+ * @author      Peter Bačinský <peter@bacinsky.sk>
  * @license     The BSD 3-Clause License
  */
 
@@ -15,8 +16,6 @@ use WebinoDbDump\Db\Dump\Table\ColumnsInterface;
 
 /**
  * Mysql database dump utility platform columns
- *
- * @author Peter Bačinský <peter@bacinsky.sk>
  */
 class Columns extends AbstractColumns implements ColumnsInterface
 {

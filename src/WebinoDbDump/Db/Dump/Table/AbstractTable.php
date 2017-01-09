@@ -3,7 +3,8 @@
  * Webino (http://webino.sk)
  *
  * @link        https://github.com/webino/WebinoDbDump/ for the canonical source repository
- * @copyright   Copyright (c) 2014-2016 Webino, s. r. o. (http://webino.sk)
+ * @copyright   Copyright (c) 2014-2017 Webino, s. r. o. (http://webino.sk)
+ * @author      Peter Bačinský <peter@bacinsky.sk>
  * @license     The BSD 3-Clause License
  */
 
@@ -12,11 +13,10 @@ namespace WebinoDbDump\Db\Dump\Table;
 use SplFileObject as File;
 use WebinoDbDump\Db\Dump\Dump;
 use WebinoDbDump\Db\Dump\Adapter;
+use WebinoDbDump\Exception;
 
 /**
  * Base class for a dump utility platform table
- *
- * @author Peter Bačinský <peter@bacinsky.sk>
  */
 abstract class AbstractTable
 {
@@ -60,7 +60,7 @@ abstract class AbstractTable
     abstract protected function select();
 
     /**
-     * @return TableColumnsInterface
+     * @return ColumnsInterface
      */
     abstract protected function createColumns();
 
@@ -101,12 +101,12 @@ abstract class AbstractTable
 
     /**
      * @return bool
+     * @throws Exception\RuntimeException
      */
     protected function isView()
     {
         if (null === $this->view) {
-            // TODO exception
-            throw new \RuntimeException('Don\'t know if is view');
+            throw new Exception\RuntimeException('Don\'t know if is view');
         }
 
         return $this->view;
@@ -188,7 +188,7 @@ abstract class AbstractTable
     }
 
     /**
-     * @return TableColumnsInterface
+     * @return ColumnsInterface
      */
     private function createColumnsInternal()
     {
