@@ -77,8 +77,6 @@
 
 ## Develop
 
-[![Dependency Status](https://www.versioneye.com/user/projects/52f49151ec1375d0a6000018/badge.png)](https://www.versioneye.com/user/projects/52f49151ec1375d0a6000018 "Develop Tools Dependency Status")
-
 We will appreciate any contributions on development of this module.
 
 Learn [How to develop Webino modules](https://github.com/webino/Webino/wiki/How-to-develop-Webino-module)
